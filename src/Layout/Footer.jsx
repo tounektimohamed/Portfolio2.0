@@ -8,8 +8,8 @@ const Footer = () => {
         <div className="flex justify-center items-center flex-col">
           {MainLogo}
           <ul className="flex flex-wrap items-center mb-6 gap-4 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-            {NavItems.map((items) => (
-              <li>
+            {NavItems.map((items,index) => (
+              <li key={index}>
                 <a href="#" className="hover:underline">
                   {items}
                 </a>

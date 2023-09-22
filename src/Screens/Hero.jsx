@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import Button from "../Components/Button";
 import LottieAnimationCard from "../Components/LottieAnimationCard";
@@ -17,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-    <main className="relative h-screen overflow-hidden">
+    <main className="relative h-screen overflow-hidden" id="home">
       <motion.div
         className="relative z-20 flex items-center overflow-hidden"
         initial="hidden"

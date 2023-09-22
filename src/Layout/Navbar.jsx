@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link as ScrollLink} from "react-scroll";
 import { BiMenuAltRight } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
 import Switcher from "../Components/Switcher";
@@ -19,7 +20,7 @@ const Navbar = () => {
     hidden: { rotate: 0 },
     visible: { rotate: 90, transition: { duration: 0.3 } },
   };
-  
+
   const initialNavItemAnimation = {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.5 } },
@@ -37,17 +38,24 @@ const Navbar = () => {
           {MainLogo}
         </a>
         <ul className="flex items-center hidden space-x-8 lg:flex">
-          {NavItems.map((item) => (
-            <li className="hover:text-gray-600 focus:outline-none focus:text-white underline-custom">
-              <a
-                href="/"
-                aria-label={item}
-                title={item}
-                className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-deep-purple-accent-400"
+          {NavItems.map((item, index) => (
+            <motion.li
+              key={index}
+              className="hover:text-gray-600 focus:outline-none focus:text-white underline-custom"
+              
+              // variants={index === 0 ? initialNavItemAnimation : {}}
+              variants={initialNavItemAnimation}
+            >
+              <ScrollLink
+                to={item.toLowerCase()} // Specify the target section ID here
+                spy={true}
+                smooth={true}
+                duration={500}
+                className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer"
               >
                 {item}
-              </a>
-            </li>
+              </ScrollLink>
+            </motion.li>
           ))}
         </ul>
         <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -113,18 +121,23 @@ const Navbar = () => {
                   </div>
                   <nav>
                     <ul className="space-y-4">
-                      {NavItems.map((item) => (
-                        <li key={item}>
-                          <motion.a
-                            href="/"
-                            aria-label={item}
-                            title={item}
-                            className="font-medium tracking-wide dark:text-gray-300 text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                            variants={menuAnimation}
+                      {NavItems.map((item, index) => (
+                        <motion.li
+                          key={item}
+                          className="hover:text-gray-600 focus:outline-none focus:text-white underline-custom "
+                          // variants={index === 0 ? initialNavItemAnimation : {}}
+                          variants={ initialNavItemAnimation }
+                        >
+                          <ScrollLink
+                            to={item.toLowerCase()} // Specify the target section ID here
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                            className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-deep-purple-accent-400"
                           >
                             {item}
-                          </motion.a>
-                        </li>
+                          </ScrollLink>
+                        </motion.li>
                       ))}
                     </ul>
                   </nav>
