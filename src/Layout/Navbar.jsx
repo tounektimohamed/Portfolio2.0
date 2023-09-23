@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link as ScrollLink} from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { BiMenuAltRight } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
 import Switcher from "../Components/Switcher";
@@ -27,8 +27,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl xl:max-w-full md:px-24 lg:px-8 dark:bg-darkBg z-40">
-      <div className="relative flex items-center justify-between">
+    <div className="py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl xl:max-w-full dark:bg-darkBg z-40">
+      <div className="flex items-center justify-between fixed top-0 w-full p-6 bg-opacity-30 border-opacity-10 backdrop-blur-md border-b z-50">
         <a
           href="/"
           aria-label="Company"
@@ -37,12 +37,11 @@ const Navbar = () => {
         >
           {MainLogo}
         </a>
-        <ul className="flex items-center hidden space-x-8 lg:flex">
+        <ul className="flex items-center hidden space-x-16 gap-20 lg:flex">
           {NavItems.map((item, index) => (
             <motion.li
               key={index}
-              className="hover:text-gray-600 focus:outline-none focus:text-white underline-custom"
-              
+              className="hover:text-gray-600 focus:outline-none focus:text-white underline-custom text-2xl"
               // variants={index === 0 ? initialNavItemAnimation : {}}
               variants={initialNavItemAnimation}
             >
@@ -51,7 +50,7 @@ const Navbar = () => {
                 spy={true}
                 smooth={true}
                 duration={500}
-                className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer"
+                className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-fadeMainTheme cursor-pointer"
               >
                 {item}
               </ScrollLink>
@@ -83,13 +82,13 @@ const Navbar = () => {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div
-                className="absolute top-0 left-0 w-full"
+                className="absolute top-0 left-0 w-full "
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
                 variants={menuAnimation}
               >
-                <div className="p-5 bg-white border rounded-xl shadow-sm dark:bg-darkBg">
+                <div className="p-5 bg-white border rounded-xl shadow-sm dark:bg-darkBg ">
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <a
@@ -126,10 +125,12 @@ const Navbar = () => {
                           key={item}
                           className="hover:text-gray-600 focus:outline-none focus:text-white underline-custom "
                           // variants={index === 0 ? initialNavItemAnimation : {}}
-                          variants={ initialNavItemAnimation }
+
+                          variants={initialNavItemAnimation}
                         >
                           <ScrollLink
-                            to={item.toLowerCase()} // Specify the target section ID here
+                            to={item.toLowerCase()}
+                            onClick={() => setIsMenuOpen(false)}
                             spy={true}
                             smooth={true}
                             duration={500}

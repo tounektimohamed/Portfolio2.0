@@ -5,6 +5,7 @@ import { HeroAnimation } from "../Helpers/AssetsList";
 import { HiOutlineDownload } from "react-icons/hi";
 
 const Hero = () => {
+  
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } },
@@ -16,7 +17,7 @@ const Hero = () => {
   };
 
   return (
-    <main className="relative h-screen overflow-hidden" id="home">
+    <main className="relative h-screen overflow-hidden pt-24" id="home">
       <motion.div
         className="relative z-20 flex items-center overflow-hidden"
         initial="hidden"

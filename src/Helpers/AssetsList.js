@@ -1,9 +1,9 @@
-import ecommlogo from "../Assets/E-comm-logo.jpg";
-import drivingSchoolLogo from "../Assets/driving school.jpg";
-import portfolioLogo from "../Assets/Protfolio-logo.jpg";
-import snapiaLogo from "../Assets/SnapiaLogo.png";
-import weatherAppLogo from "../Assets/Weather-App-Logo.jpg";
-import imdbLogo from "../Assets/IMDB logo.jpg";
+import ecommlogo from "../Assets/Ecommerce campaign-amico.svg";
+import drivingSchoolLogo from "../Assets/driving school-bro.svg";
+import portfolioLogo from "../Assets/Personal site-amico.svg";
+import snapiaLogo from "../Assets/Building hashtag-amico.svg";
+import weatherAppLogo from "../Assets/Weather-amico.svg";
+import imdbLogo from "../Assets/Home cinema-amico.svg";
 
 import aboutAnimation from "../Assets/Animations/AboutAnimation.json";
 import contactAnimation from "../Assets/Animations/ContactAnimation.json";
@@ -13,7 +13,7 @@ import skillsAnimation from "../Assets/Animations/SkillsAnimation.json";
 
 // Main  Logo
 
-export const MainLogo = (
+export const MainLogo = 
   <div
     to="/"
     className="nav-logo font-black leading-none text-gray-800 font-bebas-neue   dark:text-lightText flex items-center ml-4 cursor-pointer  no-underline text-4xl "
@@ -22,7 +22,6 @@ export const MainLogo = (
     <span className="r font-bebas-neue text-mainTheme text-6xl font-bold ">र</span>
     bh
   </div>
-);
 
 // All  Projects Images
 

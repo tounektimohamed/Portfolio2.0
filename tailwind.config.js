@@ -10,6 +10,12 @@ module.exports = {
          fadeMainTheme:'#FB923C'
         
       },
+        backgroundColor: {
+      'opacity-30': 'rgba(255, 255, 255, 0.3)',
+    },
+    borderColor: {
+      'opacity-10': 'rgba(0, 0, 0, 0.1)',
+    },
     },
   },
   darkMode: "class",
