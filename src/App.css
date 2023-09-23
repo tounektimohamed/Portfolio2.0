@@ -20,15 +20,27 @@ body{
 }
 
 
-
+.active{
+    color:#FB923C;
+}
 .r {
     font-family: "Nunito";
 }
-.magic {
-    width: 200px;
-    height: 200px;
-    background-color: #fff;
-    border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FB923C;
+    border-radius: 4px;
+}
+
+/* For Firefox */
+::-moz-scrollbar {
+    width: 8px;
+}
+
+::-moz-scrollbar-thumb {
+    background-color: #FB923C;
+    border-radius: 4px;
+}

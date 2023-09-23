@@ -10,7 +10,6 @@ import NavItems from "../Helpers/NavItems";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Menu animations
   const menuAnimation = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
@@ -46,10 +45,11 @@ const Navbar = () => {
               variants={initialNavItemAnimation}
             >
               <ScrollLink
-                to={item.toLowerCase()} // Specify the target section ID here
+                activeClass="active"
+                to={item.toLowerCase()} 
                 spy={true}
                 smooth={true}
-                duration={500}
+                duration={300}
                 className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-fadeMainTheme cursor-pointer"
               >
                 {item}
@@ -130,10 +130,11 @@ const Navbar = () => {
                         >
                           <ScrollLink
                             to={item.toLowerCase()}
+                            activeClass="active"
                             onClick={() => setIsMenuOpen(false)}
                             spy={true}
                             smooth={true}
-                            duration={500}
+                            duration={300}
                             className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-deep-purple-accent-400"
                           >
                             {item}

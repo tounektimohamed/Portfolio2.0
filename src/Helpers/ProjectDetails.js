@@ -2,7 +2,11 @@ import { DrivingSchoolLogo, ECmomLogo, IMDBLogo, PortfolioLogo, SnapiaLogo, Weat
 
 export const ProjectList = [
     {
-        key: 0,
+        name: "Om Sai Motor Driving School",
+        image: DrivingSchoolLogo,
+        demoLink: "https://omsaimotordrivingschool.in/",
+    },
+    {
         name: "ShopIt(E-commerce)",
         image: ECmomLogo,
         skills: "ReactJS, Recharts, Material UI,MongoDB, NodeJS, ExpressJS",
@@ -12,7 +16,6 @@ export const ProjectList = [
         youtube_url: "https://www.youtube.com/embed/0Fin1PrAnSg",
     },
     {
-        key: 1,
         name: "Snapia (Social Media)",
         image: SnapiaLogo,
         skills: "ReactJS, Tailwind CSS ,NodeJS ,ExpressJS, MongoDB, Socket.IO",
@@ -23,7 +26,6 @@ export const ProjectList = [
     },
 
     {
-        key: 2,
         name: "IMDB-Movie app Clone",
         image: IMDBLogo,
         skills: "React,React Router,CSS,TMDB-API",
@@ -42,7 +44,6 @@ export const ProjectList = [
     },
 
     {
-        key: 4,
         name: "Real Time Weather App",
         image: WeatherAppLogo,
         skills: "React JS ,Open Weather API,HTML, CSS",

@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
-const Cards = ({ title, imgSrc, index }) => {
+const Cards = ({ title, imgSrc, index ,demoLink}) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const variants = {
@@ -27,15 +26,18 @@ const Cards = ({ title, imgSrc, index }) => {
       },
     },
   };
-
+const navigateToProject=()=>{
+  window.open(demoLink, "_blank", "noopener noreferrer")
+}
   return (
     <motion.div
       ref={ref}
-      className="flex justify-center items-center flex-col border rounded-xl p-20 m-10 gap-5"
+      className="flex justify-center items-center flex-col border border-gray-300 dark:border-gray-500 rounded-3xl p-20 m-10 gap-5"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={variants}
       whileHover={hoverVariants}
+      onClick={()=> window.open(demoLink, "_blank", "noopener noreferrer")}
     >
       <picture className="flex justify-center items-center">
         <motion.img

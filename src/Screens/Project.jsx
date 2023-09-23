@@ -18,7 +18,8 @@ const Project = () => {
             title={project.name}
             key={index}
             index={index}
-          />
+            demoLink={project.demoLink}
+            />
         ))}
       </div>
     </div>

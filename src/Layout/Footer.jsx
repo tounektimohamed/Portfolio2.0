@@ -1,5 +1,6 @@
 import { MainLogo } from "../Helpers/AssetsList";
 import NavItems from "../Helpers/NavItems";
+import { Link as ScrollLink } from "react-scroll";
 
 const Footer = () => {
   return (
@@ -10,9 +11,16 @@ const Footer = () => {
           <ul className="flex flex-wrap items-center mb-6 gap-4 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
             {NavItems.map((items,index) => (
               <li key={index}>
-                <a href="#" className="hover:underline">
+               <ScrollLink
+                activeClass="active"
+                to={items.toLowerCase()} 
+                spy={true}
+                smooth={true}
+                duration={300}
+                className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-fadeMainTheme cursor-pointer hover:underline"
+              >
                   {items}
-                </a>
+                </ScrollLink>
               </li>
             ))}
           </ul>
@@ -20,7 +28,7 @@ const Footer = () => {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span className=" text-sm text-gray-500 sm:text-center dark:text-gray-400 flex justify-center items-center">
           © {new Date().getFullYear()}{" "}
-          <a href="" className="ml-1">Saurabh Khatmode</a>
+          <ScrollLink to='home' className="ml-1">Saurabh Khatmode</ScrollLink>
           . All Rights Reserved.
         </span>
       </div>
