@@ -1,7 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-const Cards = ({ title, imgSrc, index ,demoLink}) => {
+import { useNavigate } from "react-router-dom";
+const Cards = ({ title, imgSrc, index ,demoLink,clientDemoLink}) => {
   const ref = useRef(null);
+      const navigate = useNavigate();
+
   const isInView = useInView(ref);
   const variants = {
     hidden: { opacity: 0, y: 20 },
@@ -37,7 +40,10 @@ const navigateToProject=()=>{
       animate={isInView ? "visible" : "hidden"}
       variants={variants}
       whileHover={hoverVariants}
-      onClick={()=> window.open(demoLink, "_blank", "noopener noreferrer")}
+      onClick={() => {
+        clientDemoLink ? window.open(clientDemoLink, "_blank", "noopener noreferrer")
+            : navigate("/project/" + index)
+    }}
     >
       <picture className="flex justify-center items-center">
         <motion.img

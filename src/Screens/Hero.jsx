@@ -4,7 +4,7 @@ import LottieAnimationCard from "../Components/LottieAnimationCard";
 import { HeroAnimation } from "../Helpers/AssetsList";
 import { HiOutlineDownload } from "react-icons/hi";
 
-const Hero = () => {
+const Hero = ({id}) => {
   
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -17,7 +17,7 @@ const Hero = () => {
   };
 
   return (
-    <main className="relative h-screen overflow-hidden pt-24" id="home">
+    <main className="relative h-screen overflow-hidden pt-24" id={id}>
       <motion.div
         className="relative z-20 flex items-center overflow-hidden"
         initial="hidden"

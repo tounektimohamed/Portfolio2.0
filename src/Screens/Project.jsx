@@ -2,11 +2,11 @@ import React from "react";
 import Cards from "../Components/Cards";
 import { ProjectList } from "../Helpers/ProjectDetails";
 
-const Project = () => {
+const Project = ({id}) => {
   return (
     <div
-      className="flex justify-center items-center flex-col p-2 mt-10"
-      id="projects"
+      className="flex justify-center items-center flex-col p-2 mt-20"
+      id={id}
     >
       <h1 className="font-black leading-none text-fadeMainTheme text-6xl my-3  font-bebas-neue">
         Projects
@@ -19,6 +19,7 @@ const Project = () => {
             key={index}
             index={index}
             demoLink={project.demoLink}
+            clientDemoLink={project.clientDemoLink}
             />
         ))}
       </div>
