@@ -1,6 +1,6 @@
 import React from "react";
 import Cards from "../Components/Cards";
-import { ProjectList } from "../Helpers/ProjectDetails";
+import { ProjectList } from "../Utils/ProjectDetails";
 
 const Project = ({id}) => {
   return (

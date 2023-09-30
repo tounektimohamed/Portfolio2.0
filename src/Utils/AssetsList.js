@@ -10,18 +10,20 @@ import contactAnimation from "../Assets/Animations/ContactAnimation.json";
 import heroAnimation from "../Assets/Animations/HeroAnimation.json";
 import projectAnimation from "../Assets/Animations/ProjectAnimation.json";
 import skillsAnimation from "../Assets/Animations/SkillsAnimation.json";
+import { Link } from "react-router-dom";
 
 // Main  Logo
 
 export const MainLogo = 
-  <div
+  <Link
     to="/"
+    onClick={()=>window.scroll(0,0)}
     className="nav-logo font-black leading-none text-gray-800 font-bebas-neue   dark:text-lightText flex items-center ml-4 cursor-pointer  no-underline text-4xl "
   >
     Sau
     <span className="r font-bebas-neue text-mainTheme text-6xl font-bold ">र</span>
     bh
-  </div>
+  </Link>
 
 // All  Projects Images
 

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Button from "../Components/Button";
 import LottieAnimationCard from "../Components/LottieAnimationCard";
-import { HeroAnimation } from "../Helpers/AssetsList";
+import { HeroAnimation } from "../Utils/AssetsList";
 import { HiOutlineDownload } from "react-icons/hi";
 
 const Hero = ({id}) => {
@@ -23,9 +23,9 @@ const Hero = ({id}) => {
         initial="hidden"
         animate="visible"
       >
-        <div className="container relative flex px-6 py-8 mx-auto justify-between flex-col md:flex-row">
+        <div className="container relative flex px-6 py-8 mx-auto justify-between flex-col md:flex-col lg:flex-row">
           <motion.div
-            className="relative z-20 flex flex-col sm:w-2/3 lg:w-2/5"
+            className="relative z-20 flex flex-col sm:w-2/3 lg:w-2/5 justify-center  items-center mx-auto"
             variants={textVariants}
           >
             <h1 className="flex flex-col text-6xl font-black leading-none text-gray-800 uppercase font-bebas-neue md:text-9xl dark:text-white">

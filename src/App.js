@@ -1,16 +1,14 @@
 import  './App.css'
-
 import {
   BrowserRouter as Router,
   Route,
   Routes,
 } from "react-router-dom";
-
 import Navbar from "./Layout/Navbar";
 import Footer from "./Layout/Footer";
 import About from "./Screens/About";
 import Contact from "./Screens/Contact";
-import Hero from "./Screens/Hero";
+import Home from "./Screens/Home";
 import Project from "./Screens/Project";
 import SingleProject from "./Screens/SingleProject";
 import Skills from "./Screens/Skills";
@@ -21,7 +19,7 @@ function App() {
       <Navbar />
       <div className="bg-white dark:bg-gray-800">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<MainPage />} />
           <Route path="/project/:id" element={<SingleProject />} />
         </Routes>
       </div>
@@ -30,14 +28,14 @@ function App() {
   );
 }
 
-function Home() {
+function MainPage() {
   return (
     <>
-      <Hero id='home'/>
+      <Home id='home'/>
       <Skills id='skills'/>
       <Project id='projects'/>
       <About id='about'/>
-      <Contact id='projects' />
+      <Contact id='contact' />
     </>
   );
 }

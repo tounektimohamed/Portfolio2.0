@@ -29,9 +29,7 @@ const Cards = ({ title, imgSrc, index ,demoLink,clientDemoLink}) => {
       },
     },
   };
-const navigateToProject=()=>{
-  window.open(demoLink, "_blank", "noopener noreferrer")
-}
+
   return (
     <motion.div
       ref={ref}

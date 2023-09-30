@@ -1,16 +1,17 @@
 import { useParams } from 'react-router-dom';
-import { ProjectList } from '../Helpers/ProjectDetails';
+import { ProjectList } from '../Utils/ProjectDetails';
 import { motion } from 'framer-motion';
 import Button from '../Components/Button';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { TbWorldWww } from 'react-icons/tb';
 import { useEffect } from 'react';
+import scrollToTopUtil from '../Utils/ScrollToTop';
 
 const SingleProject = () => {
   const { id } = useParams();
   const { codeLink, demoLink, image, info, name, skills, youtube_url } = ProjectList[id];
   useEffect(()=>{
-    window.scroll(0, 0);
+    scrollToTopUtil()
   },[])
 
   return (

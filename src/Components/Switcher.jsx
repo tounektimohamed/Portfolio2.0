@@ -23,7 +23,6 @@ const Switcher = () => {
                 className="ml-2 "
                 moonColor="#EA580C"
                 sunColor="#EA580C"
-                
                 size={40}
             />
         </>

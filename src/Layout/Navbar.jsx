@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
 import { BiMenuAltRight } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
 import Switcher from "../Components/Switcher";
-import { MainLogo } from "../Helpers/AssetsList";
-import NavItems from "../Helpers/NavItems";
+import { MainLogo } from "../Utils/AssetsList";
+import NavItems from "../Utils/NavItems";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const navigate=useNavigate()
   const menuAnimation = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
@@ -25,17 +26,11 @@ const Navbar = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.5 } },
   };
 
+  
   return (
     <div className="py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl xl:max-w-full dark:bg-darkBg z-40">
       <div className="flex items-center justify-between fixed top-0 w-full p-6 bg-opacity-30 border-opacity-10 backdrop-blur-md border-b z-50">
-        <a
-          href="/"
-          aria-label="Company"
-          title="Company"
-          className="inline-flex items-center"
-        >
-          {MainLogo}
-        </a>
+        {MainLogo}
         <ul className="flex items-center hidden space-x-16 gap-20 lg:flex">
           {NavItems.map((item, index) => (
             <motion.li
@@ -46,8 +41,9 @@ const Navbar = () => {
             >
               <ScrollLink
                 activeClass="active"
-                to={item.toLowerCase()} 
+                to={item.toLowerCase()}
                 spy={true}
+                onClick={()=> navigate('/')}
                 smooth={true}
                 duration={300}
                 className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-fadeMainTheme cursor-pointer"
