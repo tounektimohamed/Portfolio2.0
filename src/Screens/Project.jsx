@@ -5,7 +5,7 @@ import { ProjectList } from "../Utils/ProjectDetails";
 const Project = ({id}) => {
   return (
     <div
-      className="flex justify-center items-center flex-col p-2 mt-20"
+      className="flex justify-center items-center flex-col p-2 mt-5"
       id={id}
     >
       <h1 className="font-black leading-none text-fadeMainTheme text-6xl my-3  font-bebas-neue">
