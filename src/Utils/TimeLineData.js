@@ -1,21 +1,39 @@
-const timelineData = [
-    {
-      companyName: '.',
-      designation: 'Software Engineer',
-      date: 'May 5',
-      year: 2015,
-      technology: 'React, Node.js',
-      isLeft: true,
-    },
-    {
-      companyName: 'Mograsys Technologies',
-      designation: 'Software Developer Intern',
-      date: '2023 JAN - 2023 MAR',
-      year: 2019,
-      technology: 'React JS, TypeScript, Tailwind CSS',
-      isLeft: false,
-    },
-    // Add more timeline items as needed
-  ];
-  
-  export default timelineData
+import { FaBriefcase, FaGraduationCap, FaBuilding } from 'react-icons/fa'; 
+
+const timelineItems = [
+  {
+    date: <span className='text-lightText md:text-darkBg dark:text-lightText'> 2023 SEP - Present </span>,
+    position: 'right',
+    icon: <FaBriefcase />,
+    title: 'Integrated Active Monitoring',
+    subTitle: 'Software Developer',
+    description: 'React JS, Ant Design, Fastify, Python, PSQL, MongoDB, Docker, Redis',
+  },
+  {
+    date: <span className='text-lightText md:text-darkBg dark:text-lightText'>2023 JAN - 2023 MAR</span>,
+    position: 'left',
+    icon: <FaBriefcase />,
+    title: 'Mograsys Technologies',
+    subTitle: 'Software Developer Intern',
+    description: 'React JS, TypeScript, Tailwind CSS',
+  },
+  {
+    date: <span className='text-lightText md:text-darkBg dark:text-lightText'> 2022 - 2024 </span>,
+    position: 'right',
+    icon: <FaGraduationCap />, 
+    title: 'Savitribai Phule Pune University',
+    subTitle: 'Master Of Science, Computer Science MSc(CS)',
+    description: 'Post Graduation',
+  },
+  {
+    date: <span className='text-lightText md:text-darkBg dark:text-lightText'> 2019 - 2022 </span>,
+    position: 'left',
+    icon: <FaBuilding />, // Use the FaBuilding icon component
+    title: 'Savitribai Phule Pune University',
+    subTitle: 'Bachelor Of Vocational, Software Development',
+    description: 'Total CGPA: 9.56 (81.91%)',
+  },
+];
+
+
+export default timelineItems

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import Button from "../Components/Button";
 import LottieAnimationCard from "../Components/LottieAnimationCard";
-import { HeroAnimation } from "../Utils/AssetsList";
+import { HeroAnimation } from "../Assets/AssetsList";
 import { HiOutlineDownload } from "react-icons/hi";
 
-const Hero = ({id}) => {
-  
+const Hero = ({ id }) => {
+
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } },
@@ -25,17 +25,17 @@ const Hero = ({id}) => {
       >
         <div className="container relative flex px-6 py-8 mx-auto justify-between flex-col md:flex-col lg:flex-row">
           <motion.div
-            className="relative z-20 flex flex-col sm:w-2/3 lg:w-2/5 justify-center  items-center mx-auto"
+            className="relative z-20 flex flex-col sm:w-2/3 lg:w-2/5 justify-center  items-start md:gap-3 mx-auto"
             variants={textVariants}
           >
-            <h1 className="flex flex-col text-6xl font-black leading-none text-gray-800 uppercase font-bebas-neue md:text-9xl dark:text-white">
+            <h1 className=" flex flex-col text-6xl font-black leading-none text-gray-800 uppercase font-bebas-neue md:text-9xl dark:text-white">
               <span className="text-fadeMainTheme"> Coding </span>
               Dreams into Reality
             </h1>
-            <p className="text-gray-700 dark:text-white text-4xl">
+            <p className="text-gray-700 dark:text-white text-4xl md:px-3 mt-2">
               Building Tomorrow's Digital World Today
             </p>
-            <motion.div variants={buttonVariants} className="flex mt-8">
+            <motion.div variants={buttonVariants} className="flex mt-8 md:px-3">
               <Button
                 btnText="Download CV"
                 btnIcon={<HiOutlineDownload className="text-2xl" />}

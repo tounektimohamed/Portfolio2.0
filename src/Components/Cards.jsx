@@ -2,9 +2,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 const Cards = ({ title, imgSrc, index ,demoLink,clientDemoLink}) => {
+  const navigate = useNavigate();
   const ref = useRef(null);
-      const navigate = useNavigate();
-
   const isInView = useInView(ref);
   const variants = {
     hidden: { opacity: 0, y: 20 },

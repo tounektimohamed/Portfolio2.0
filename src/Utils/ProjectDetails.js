@@ -5,7 +5,7 @@ import {
   PortfolioLogo,
   SnapiaLogo,
   WeatherAppLogo,
-} from "./AssetsList";
+} from "../Assets/AssetsList";
 
 export const ProjectList = [
   {
@@ -29,7 +29,6 @@ export const ProjectList = [
     codeLink: "https://github.com/Saurabh-8585/MERN-Social-Media-Frontend",
     demoLink: "https://snapia.vercel.app",
     info: "Streamlined photo uploads through Cloudinary, Enhanced messaging capabilities by implementing Socket IO, enabling real-time messaging for improved communication.Empowered users to create accounts, post updates, follow others, and engage with posts through liking and commenting.Integrated cutting-edge features such as real-time chat, seamless login with Google, efficient photo uploads, interactive post interactions, robust password management, and precise location tracking for a comprehensive user experience.Developed a news section for users to read news, providing an additional value-added feature to the platform.",
-    // youtube_url: "https://www.youtube.com/embed/your-youtube-video-id",
   },
 
   {

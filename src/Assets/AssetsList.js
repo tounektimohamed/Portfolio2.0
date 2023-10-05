@@ -5,19 +5,19 @@ import snapiaLogo from "../Assets/Building hashtag-amico.svg";
 import weatherAppLogo from "../Assets/Weather-amico.svg";
 import imdbLogo from "../Assets/Home cinema-amico.svg";
 
-import aboutAnimation from "../Assets/Animations/AboutAnimation.json";
-import contactAnimation from "../Assets/Animations/ContactAnimation.json";
-import heroAnimation from "../Assets/Animations/HeroAnimation.json";
-import projectAnimation from "../Assets/Animations/ProjectAnimation.json";
-import skillsAnimation from "../Assets/Animations/SkillsAnimation.json";
+import aboutAnimation from "./Animations/AboutAnimation.json";
+import contactAnimation from "./Animations/ContactAnimation.json";
+import heroAnimation from "./Animations/HeroAnimation.json";
+import projectAnimation from "./Animations/ProjectAnimation.json";
+import skillsAnimation from "./Animations/SkillsAnimation.json";
 import { Link } from "react-router-dom";
 
 // Main  Logo
 
-export const MainLogo = 
+export const MainLogo =
   <Link
     to="/"
-    onClick={()=>window.scroll(0,0)}
+    onClick={() => window.scroll(0, 0)}
     className="nav-logo font-black leading-none text-gray-800 font-bebas-neue   dark:text-lightText flex items-center ml-4 cursor-pointer  no-underline text-4xl "
   >
     Sau
