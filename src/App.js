@@ -43,11 +43,11 @@ function App() {
           } outerScale={5}
 
         /> */}
-        <Home  />
-        <Skills  />
-        <Project  />
-        <About  />
-        <Contact  />
+        <Home />
+        <Project />
+        <Skills />
+        <About />
+        <Contact />
         <Footer />
       </div>
     </>

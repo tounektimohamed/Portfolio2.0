@@ -47,7 +47,7 @@ const Cards = ({ title, imgSrc, index, clientDemoLink }) => {
     <>
       <motion.div
         ref={ref}
-        className="flex justify-center items-center flex-col border border-gray-300 dark:border-gray-500 rounded-3xl p-20 m-10 gap-5"
+        className="flex justify-center items-center flex-col border border-gray-300 dark:border-gray-500 rounded-3xl p-20 m-10 gap-5 hover:shadow-md"
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={variants}

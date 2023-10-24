@@ -1,3 +1,4 @@
+// Projects
 import ecommlogo from "../Assets/Project-Images/Ecommerce campaign-amico.svg";
 import drivingSchoolLogo from "../Assets/Project-Images/driving school-bro.svg";
 import portfolioLogo from "../Assets/Project-Images/Personal site-amico.svg";
@@ -6,13 +7,27 @@ import weatherAppLogo from "../Assets/Project-Images/Weather-amico.svg";
 import imdbLogo from "../Assets/Project-Images/Home cinema-amico.svg";
 import loader from "../Assets/loader.svg"
 
-
+// Animations
 import aboutAnimation from "./Animations/AboutAnimation.json";
 import contactAnimation from "./Animations/ContactAnimation.json";
 import heroAnimation from "./Animations/HeroAnimation.json";
 import projectAnimation from "./Animations/ProjectAnimation.json";
 import skillsAnimation from "./Animations/SkillsAnimation.json";
 import { Link } from "react-scroll";
+
+
+// Skills
+
+import JavaScript from '../Assets/Skills/JavaScript.svg'
+import ReactJS from '../Assets/Skills/ReactJS.svg'
+import Redis from '../Assets/Skills/Redis.svg'
+import TailwindCSS from '../Assets/Skills/TailwindCSS.svg'
+import PostgreSQL from '../Assets/Skills/PostgreSQL.svg'
+import NodeJS from '../Assets/Skills/NodeJS.svg'
+import MongoDB from '../Assets/Skills/MongoDB.svg'
+import Github from '../Assets/Skills/Github.svg'
+import FastAPI from '../Assets/Skills/FastAPI.svg'
+import ExpressJS from '../Assets/Skills/ExpressJS.svg'
 
 // Main  Logo
 
@@ -44,3 +59,16 @@ export const ContactAnimation = contactAnimation;
 export const HeroAnimation = heroAnimation;
 export const ProjectAnimation = projectAnimation;
 export const SkillsAnimation = skillsAnimation;
+
+// All Skills
+export const JavaScriptLogo = JavaScript
+export const ReactJSLogo = ReactJS
+export const RedisLogo = Redis
+export const TailwindCSSLogo = TailwindCSS
+export const PostgreSQLLogo = PostgreSQL
+export const NodeJSLogo = NodeJS
+export const MongoDBLogo = MongoDB
+export const GithubLogo = Github
+export const FastAPILogo = FastAPI
+export const ExpressJSLogo = ExpressJS
+
