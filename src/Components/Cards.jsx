@@ -1,10 +1,23 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
-const Cards = ({ title, imgSrc, index ,demoLink,clientDemoLink}) => {
-  const navigate = useNavigate();
+import { useRef, useState } from "react";
+import Modal from "./Modal";
+
+const Cards = ({ title, imgSrc, index, clientDemoLink }) => {
+  const [showModal, setShowModal] = useState(false);
+
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  const handleShowProject = () => {
+    if (clientDemoLink) {
+      window.open(clientDemoLink, "_blank", "noopener noreferrer")
+    }
+    else {
+      setShowModal(true)
+      document.body.classList.add('overflow-hidden')
+    }
+  }
+
   const variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -29,32 +42,42 @@ const Cards = ({ title, imgSrc, index ,demoLink,clientDemoLink}) => {
     },
   };
 
+
   return (
-    <motion.div
-      ref={ref}
-      className="flex justify-center items-center flex-col border border-gray-300 dark:border-gray-500 rounded-3xl p-20 m-10 gap-5"
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={variants}
-      whileHover={hoverVariants}
-      onClick={() => {
-        clientDemoLink ? window.open(clientDemoLink, "_blank", "noopener noreferrer")
-            : navigate("/project/" + index)
-    }}
-    >
-      <picture className="flex justify-center items-center">
-        <motion.img
-          src={imgSrc}
-          alt={title}
-          className="w-full h-full object-cover"
-          initial={{ scale: 1 }}
-          whileHover={{ scale: 1.05 }}
+    <>
+      <motion.div
+        ref={ref}
+        className="flex justify-center items-center flex-col border border-gray-300 dark:border-gray-500 rounded-3xl p-20 m-10 gap-5"
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={variants}
+        whileHover={hoverVariants}
+        onClick={() => {
+          // clientDemoLink ? window.open(clientDemoLink, "_blank", "noopener noreferrer")
+          //   : navigate("/project/" + index)
+          handleShowProject()
+        }}
+      >
+        <picture className="flex justify-center items-center">
+          <motion.img
+            src={imgSrc}
+            alt={title}
+            className="w-full h-full object-cover"
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+          />
+        </picture>
+        <h2 className="font-black leading-none text-fadeMainTheme text-xl mt-3 font-bebas-neue">
+          {title}
+        </h2>
+      </motion.div>
+      {showModal && (
+        <Modal
+          onClose={() => setShowModal(false)}
+          id={index}
         />
-      </picture>
-      <h2 className="font-black leading-none text-fadeMainTheme text-xl mt-3 font-bebas-neue">
-        {title}
-      </h2>
-    </motion.div>
+      )}
+    </>
   );
 };
 

@@ -17,7 +17,7 @@ const Hero = ({ id }) => {
   };
 
   return (
-    <main className="relative h-screen overflow-hidden pt-24" id={id}>
+    <main className="relative h-screen overflow-hidden pt-24" id='home'>
       <motion.div
         className="relative z-20 flex items-center overflow-hidden"
         initial="hidden"

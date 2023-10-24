@@ -28,7 +28,7 @@ const timelineItems = [
   {
     date: <span className='text-lightText md:text-darkBg dark:text-lightText'> 2019 - 2022 </span>,
     position: 'left',
-    icon: <FaBuilding />, // Use the FaBuilding icon component
+    icon: <FaBuilding />, 
     title: 'Savitribai Phule Pune University',
     subTitle: 'Bachelor Of Vocational, Software Development',
     description: 'Total CGPA: 9.56 (81.91%)',

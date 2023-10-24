@@ -1,6 +1,6 @@
-const Skills = ({id}) => {
+const Skills = () => {
   return (
-    <div id={id}>Skills</div>
+    <div id='skills'>Skills</div>
   )
 }
 

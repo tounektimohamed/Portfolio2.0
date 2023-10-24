@@ -1,7 +1,6 @@
 import { MainLogo } from "../Assets/AssetsList";
 import NavItems from "../Utils/NavItems";
 import { Link as ScrollLink } from "react-scroll";
-import { Link } from "react-router-dom";
 import scrollToTopUtil from "../Utils/ScrollToTop";
 
 const Footer = () => {
@@ -30,9 +29,9 @@ const Footer = () => {
         <hr className="my-3 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span className=" text-sm text-gray-500 sm:text-center dark:text-gray-400 flex justify-center items-center mb-2">
           © {new Date().getFullYear()}{" "}
-          <Link to="/" onClick={() => scrollToTopUtil()} className="ml-1 hover:underline">
+          <ScrollLink to="/" onClick={() => scrollToTopUtil()} className="ml-1 hover:underline">
             Saurabh Khatmode
-          </Link>
+          </ScrollLink>
           . All Rights Reserved.
         </span> 
       </div>

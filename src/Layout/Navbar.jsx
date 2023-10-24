@@ -6,11 +6,10 @@ import { RxCross2 } from "react-icons/rx";
 import Switcher from "../Components/Switcher";
 import { MainLogo } from "../Assets/AssetsList";
 import NavItems from "../Utils/NavItems";
-import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate()
+
   const menuAnimation = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
@@ -43,7 +42,6 @@ const Navbar = () => {
                 activeClass="active"
                 to={item.toLowerCase()}
                 spy={true}
-                onClick={() => navigate('/')}
                 smooth={true}
                 duration={300}
                 className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-fadeMainTheme cursor-pointer"

@@ -4,7 +4,7 @@ import Cards from "../Components/Cards";
 import { ProjectList } from "../Utils/ProjectDetails";
 import Title from "../Components/Title";
 
-const Project = ({ id }) => {
+const Project = () => {
   const Labels = ['All', 'Client', 'Personal'];
   const [activeLabel, setActiveLabel] = useState(Labels[0]);
   const [projects, setProjects] = useState(ProjectList);
@@ -38,7 +38,7 @@ const Project = ({ id }) => {
   return (
     <motion.div
       className="flex justify-center items-center flex-col p-2 mt-5"
-      id={id}
+      id='projects'
       initial="initial"
       animate="animate"
 
