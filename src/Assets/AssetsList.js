@@ -21,13 +21,14 @@ import { Link } from "react-scroll";
 import JavaScript from '../Assets/Skills/JavaScript.svg'
 import ReactJS from '../Assets/Skills/ReactJS.svg'
 import Redis from '../Assets/Skills/Redis.svg'
-import TailwindCSS from '../Assets/Skills/TailwindCSS.svg'
+import TailwindCSS from '../Assets/Skills/Tailwindcss.svg'
 import PostgreSQL from '../Assets/Skills/PostgreSQL.svg'
 import NodeJS from '../Assets/Skills/NodeJS.svg'
 import MongoDB from '../Assets/Skills/MongoDB.svg'
 import Github from '../Assets/Skills/Github.svg'
 import FastAPI from '../Assets/Skills/FastAPI.svg'
 import ExpressJS from '../Assets/Skills/ExpressJS.svg'
+import Docker from '../Assets/Skills/docker.svg'
 
 // Main  Logo
 
@@ -71,4 +72,5 @@ export const MongoDBLogo = MongoDB
 export const GithubLogo = Github
 export const FastAPILogo = FastAPI
 export const ExpressJSLogo = ExpressJS
+export const DockerLogo = Docker
 

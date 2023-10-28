@@ -26,7 +26,8 @@ function App() {
       <Loader load={load} />
       <div className="bg-white dark:bg-gray-800">
         <Navbar />
-        {/* <AnimatedCursor
+       
+        <AnimatedCursor
           innerSize={15}
           outerSize={15}
           color="255, 166, 0"
@@ -42,7 +43,7 @@ function App() {
             ]
           } outerScale={5}
 
-        /> */}
+        />
         <Home />
         <Project />
         <Skills />

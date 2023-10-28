@@ -6,6 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import Switcher from "../Components/Switcher";
 import { MainLogo } from "../Assets/AssetsList";
 import NavItems from "../Utils/NavItems";
+import ScrollProgress from "../Components/ScrollProgress";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
 
 
   return (
-    <div className="py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl xl:max-w-full dark:bg-darkBg z-40">
+    <div className="py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl xl:max-w-full dark:bg-darkBg z-40 relative">
       <div className="flex items-center justify-between fixed top-0 w-full p-6 bg-opacity-30 border-opacity-10 backdrop-blur-md border-b z-50">
         {MainLogo}
         <ul className="flex items-center hidden space-x-16 gap-20 lg:flex">
@@ -142,6 +143,9 @@ const Navbar = () => {
             )}
           </AnimatePresence>
         </div>
+      </div>
+      <div>
+        <ScrollProgress/>
       </div>
     </div>
   );

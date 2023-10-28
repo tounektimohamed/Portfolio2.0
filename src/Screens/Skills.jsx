@@ -1,5 +1,6 @@
 import {
   AboutAnimation,
+  DockerLogo,
   ExpressJSLogo,
   FastAPILogo,
   GithubLogo,
@@ -26,8 +27,8 @@ const Skills = () => {
     GithubLogo,
     ExpressJSLogo,
     FastAPILogo,
-    RedisLogo,
     PostgreSQLLogo,
+    DockerLogo
   ];
 
   const TitleText =
@@ -35,18 +36,18 @@ const Skills = () => {
       Where <strong className="text-fadeMainTheme">Passion</strong> Meets <strong className="text-fadeMainTheme">Proficiency</strong>
     </h1>
   return (
-    <div className="my-20">
+    <div className="my-20 flex justify-center items-center flex-col">
       <Title text={TitleText} id="skills" />
-      <div id='skills' className="flex flex-wrap justify-center gap-10 mt-10 px-10 lg:ml-10">
+      <div id='skills' className="flex flex-wrap justify-center gap-10 mt-10 px-10 lg:ml-10 lg:w-1/2">
         {
           data.map((item, index) => (
             <SkillsCard imgSrc={item} index={index} key={index} />
           ))
         }
+        </div>
         <div className="flex justify-center items-center flex-col">
           <LottieAnimationCard AnimationSrc={AboutAnimation} />
           <GitHubCalender />
-        </div>
       </div>
 
     </div>

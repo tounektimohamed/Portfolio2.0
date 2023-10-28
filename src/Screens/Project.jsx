@@ -37,7 +37,7 @@ const Project = () => {
 
   return (
     <motion.div
-      className="flex justify-center items-center flex-col p-2 mt-5"
+      className="flex justify-center items-center flex-col p-2 mt-5 mx-auto"
       id='projects'
       initial="initial"
       animate="animate"
