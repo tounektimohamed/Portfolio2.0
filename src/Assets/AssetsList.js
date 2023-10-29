@@ -21,7 +21,7 @@ import { Link } from "react-scroll";
 import JavaScript from '../Assets/Skills/JavaScript.svg'
 import ReactJS from '../Assets/Skills/ReactJS.svg'
 import Redis from '../Assets/Skills/Redis.svg'
-import TailwindCSS from '../Assets/Skills/TailwindCSS.svg'
+import TailwindCSS from '../Assets/Skills/TailwindCSS1.svg'
 import PostgreSQL from '../Assets/Skills/PostgreSQL.svg'
 import NodeJS from '../Assets/Skills/NodeJS.svg'
 import MongoDB from '../Assets/Skills/MongoDB.svg'
