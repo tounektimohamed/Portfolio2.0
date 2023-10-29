@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import  { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Cards from "../Components/Cards";
 import { ProjectList } from "../Utils/ProjectDetails";
@@ -49,7 +49,7 @@ const Project = () => {
         variants={variants}
         ref={ref}>
         <Title text='Projects' />
-        <div className="flex justify-center items-center gap-10 text-2xl my-10">
+        <div className="flex justify-center items-center gap-10 text-2xl">
           {Labels.map(item => (
             <motion.h2
               key={item}

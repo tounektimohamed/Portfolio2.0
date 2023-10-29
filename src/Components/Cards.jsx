@@ -6,7 +6,7 @@ const Cards = ({ title, imgSrc, index, clientDemoLink }) => {
   const [showModal, setShowModal] = useState(false);
 
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   const handleShowProject = () => {
     if (clientDemoLink) {
@@ -52,11 +52,7 @@ const Cards = ({ title, imgSrc, index, clientDemoLink }) => {
         animate={isInView ? "visible" : "hidden"}
         variants={variants}
         whileHover={hoverVariants}
-        onClick={() => {
-          // clientDemoLink ? window.open(clientDemoLink, "_blank", "noopener noreferrer")
-          //   : navigate("/project/" + index)
-          handleShowProject()
-        }}
+        onClick={handleShowProject}
       >
         <picture className="flex justify-center items-center">
           <motion.img

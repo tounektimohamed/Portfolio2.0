@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ProjectList } from '../Utils/ProjectDetails';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../Components/Button';

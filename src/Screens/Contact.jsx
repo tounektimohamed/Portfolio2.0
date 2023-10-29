@@ -1,13 +1,17 @@
 import { ContactAnimation } from "../Assets/AssetsList";
 import ContactForm from "../Components/ContactForm";
 import LottieAnimationCard from "../Components/LottieAnimationCard";
+import Title from "../Components/Title";
 
 const Contact = () => {
   return (
-    <div id="contact" className=" flex justify-center items-center gap-5 flex-col lg:flex-row">
-      <ContactForm/>
-      <LottieAnimationCard AnimationSrc={ContactAnimation} />
-    </div>
+    <section className="my-10 mt-20" id="contact">
+      <Title text="Contact" id="contact" />
+      <div className=" flex justify-center items-center gap-5 flex-col-reverse lg:flex-row  px-10 ">
+        <LottieAnimationCard AnimationSrc={ContactAnimation} />
+        <ContactForm />
+      </div>
+    </section>
   );
 };
 

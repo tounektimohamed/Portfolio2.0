@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-const SkillsCard = ({ imgSrc, index, title }) => {
+const SkillsCard = ({ imgSrc, index }) => {
 
     const variants = {
         hidden: { opacity: 0, y: 20 },
@@ -9,7 +9,7 @@ const SkillsCard = ({ imgSrc, index, title }) => {
             y: 0,
             transition: {
                 duration: 0.5,
-                delay: index * 0.2,
+                delay: index * 0.1,
             },
         },
     };
@@ -26,7 +26,7 @@ const SkillsCard = ({ imgSrc, index, title }) => {
         },
     };
     const ref = useRef(null);
-    const isInView = useInView(ref);
+    const isInView = useInView(ref, { once: true });
     return (
         <motion.div
             ref={ref}
@@ -39,7 +39,7 @@ const SkillsCard = ({ imgSrc, index, title }) => {
             <picture className="flex justify-center items-center p-10">
                 <motion.img
                     src={imgSrc}
-                    alt={title}
+                    alt="skills"
                     className="w-10/12 h-10/12 "
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.05 }}

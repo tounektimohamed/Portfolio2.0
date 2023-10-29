@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink, Events } from "react-scroll";
 import { BiMenuAltRight } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
 import Switcher from "../Components/Switcher";
@@ -26,6 +26,15 @@ const Navbar = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.5 } },
   };
 
+  useEffect(() => {
+    Events.scrollEvent.register('begin', function (to, element) {
+      setIsMenuOpen(false);
+    });
+
+    return () => {
+      Events.scrollEvent.remove('begin');
+    };
+  }, []);
 
   return (
     <div className="py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl xl:max-w-full dark:bg-darkBg z-40 relative">
@@ -36,7 +45,6 @@ const Navbar = () => {
             <motion.li
               key={index}
               className="hover:text-gray-600 focus:outline-none focus:text-white underline-custom text-2xl"
-              // variants={index === 0 ? initialNavItemAnimation : {}}
               variants={initialNavItemAnimation}
             >
               <ScrollLink
@@ -44,7 +52,7 @@ const Navbar = () => {
                 to={item.toLowerCase()}
                 spy={true}
                 smooth={true}
-                duration={300}
+                duration={500} // Adjust scroll duration as needed
                 className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-fadeMainTheme cursor-pointer"
               >
                 {item}
@@ -119,8 +127,6 @@ const Navbar = () => {
                         <motion.li
                           key={item}
                           className="hover:text-gray-600 focus:outline-none focus:text-white underline-custom "
-                          // variants={index === 0 ? initialNavItemAnimation : {}}
-
                           variants={initialNavItemAnimation}
                         >
                           <ScrollLink
@@ -129,7 +135,7 @@ const Navbar = () => {
                             onClick={() => setIsMenuOpen(false)}
                             spy={true}
                             smooth={true}
-                            duration={300}
+                            duration={500} // Adjust scroll duration as needed
                             className="font-medium tracking-wide text-gray-700 dark:text-lightText transition-colors duration-200 hover:text-deep-purple-accent-400"
                           >
                             {item}
@@ -145,7 +151,7 @@ const Navbar = () => {
         </div>
       </div>
       <div>
-        <ScrollProgress/>
+        <ScrollProgress />
       </div>
     </div>
   );
