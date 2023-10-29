@@ -47,7 +47,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
           <motion.div
-            className="relative flex lg:justify-end justify-center items-center mt-10 md:mt-0"
+            className="relative flex lg:justify-end justify-center items-center my-2  md:mt-0 pb-4"
             variants={textVariants}
           >
             <LottieAnimationCard AnimationSrc={HeroAnimation} />
