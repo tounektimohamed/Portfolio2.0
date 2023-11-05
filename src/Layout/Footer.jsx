@@ -3,10 +3,60 @@ import NavItems from "../Utils/NavItems";
 import { Link as ScrollLink } from "react-scroll";
 import scrollToTopUtil from "../Utils/ScrollToTop";
 
+import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+const SocialIcons = () => {
+  const ref = useRef();
+  const inView = useInView(ref, { once: true });
+  const iconVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  return (
+    <motion.div
+      className="flex items-center space-x-7 my-5"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={iconVariants}
+    >
+      <motion.a
+        href="https://www.linkedin.com/in/saurabhkhatmode/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaLinkedin className="text-4xl text-blue-600" />
+      </motion.a>
+      <motion.a
+        href="https://github.com/Saurabh-8585"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaGithub className="text-4xl text-gray-800" />
+      </motion.a>
+      <motion.a
+        href="https://www.instagram.com/saurabh7xd/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaInstagram className="text-4xl text-pink-500" />
+      </motion.a>
+      <motion.a
+        href="https://twitter.com/Saurabhkhatmode"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaTwitter className="text-4xl text-blue-400" />
+      </motion.a>
+    </motion.div>
+  );
+};
 const Footer = () => {
   return (
     <footer className="bg-white shadow dark:bg-gray-900 ">
-      <div className="w-full max-w-screen-xl mx-auto p-2">
+      <div className="w-full max-w-screen-xl mx-auto p-2 flex flex-col items-center justify-center">
         <div className="flex justify-center items-center flex-col">
           {MainLogo}
           <ul className="flex flex-wrap items-center mb-2 gap-4 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
@@ -26,14 +76,19 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <hr className="my-3 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <SocialIcons />
+        <hr className=" border-gray-200 sm:mx-auto dark:border-gray-700 " />
         <span className=" text-sm text-gray-500 sm:text-center dark:text-gray-400 flex justify-center items-center mb-2">
           © {new Date().getFullYear()}{" "}
-          <ScrollLink to="/" onClick={() => scrollToTopUtil()} className="ml-1 hover:underline">
+          <ScrollLink
+            to="/"
+            onClick={() => scrollToTopUtil()}
+            className="ml-1 hover:underline"
+          >
             Saurabh Khatmode
           </ScrollLink>
           . All Rights Reserved.
-        </span> 
+        </span>
       </div>
     </footer>
   );

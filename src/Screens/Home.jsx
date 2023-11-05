@@ -20,16 +20,19 @@ const Hero = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <main className="relative h-screen overflow-hidden pt-24" id="home">
+    <main
+      className="relative my-10 overflow-hidden pt-24 "
+      id="home"
+    >
       <motion.div
         ref={ref}
-        className="relative z-20 flex items-center overflow-hidden"
+        className="relative z-20 flex items-center overflow-hidden "
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        <div className="container relative flex px-6  mx-auto justify-between flex-col md:flex-col lg:flex-row">
+        <div className="container relative flex px-6  mx-auto justify-between flex-col md:flex-col lg:flex-row ">
           <motion.div
-            className="relative z-20 flex flex-col sm:w-2/3 lg:w-2/5 justify-center  items-start md:gap-3 mx-auto"
+            className="relative z-20 flex flex-col sm:w-2/3  lg:w-2/5 justify-center  items-start md:gap-3 mx-auto"
             variants={textVariants}
           >
             <h1 className="flex flex-col text-6xl font-black leading-none text-gray-800 uppercase font-bebas-neue md:text-9xl dark:text-white">

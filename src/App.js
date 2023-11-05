@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <Loader load={load} />
-      <div className="bg-white dark:bg-gray-800">
+      <div className="bg-white dark:bg-gray-800 ">
         <Navbar />
         <AnimatedCursor
           innerSize={15}

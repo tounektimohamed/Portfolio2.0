@@ -41,14 +41,13 @@ const Skills = () => {
       <Title text={TitleText} id="skills" />
       <div
         id="skills"
-        className="grid grid-cols-2 md:grid-cols-3  lg:grid-cols-5  gap-10 mt-10 px-10 lg:ml-10 lg:w-10/12"
+        className="grid grid-cols-2 lg:grid-cols-5  gap-10 mt-10 px-10 lg:ml-10 lg:w-10/12 max-w-fit"
       >
         {data.map((item, index) => (
           <SkillsCard imgSrc={item} index={index} key={index} />
         ))}
       </div>
-      <div className="flex justify-center items-center flex-col">
-        <LottieAnimationCard AnimationSrc={AboutAnimation} />
+      <div className="flex justify-center items-center flex-col my-20">
         <GitHubCalender />
       </div>
     </div>
