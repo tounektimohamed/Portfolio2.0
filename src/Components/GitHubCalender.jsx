@@ -59,10 +59,9 @@ const GitHubCalender = () => {
             fontSize={10}
             blockMargin={5}
             theme={{
-              light: ["hsl(0, 0%, 92%)", "#F59E0B"],
-              dark: ["#0F0F0F", "#F59E0B"],
+              light: ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"],
+              dark:["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"],
             }}
-            text="dark"
           />
         </motion.div>
       </motion.div>

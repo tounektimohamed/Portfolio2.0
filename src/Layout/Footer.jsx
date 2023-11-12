@@ -34,7 +34,7 @@ const SocialIcons = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaGithub className="text-4xl text-gray-800" />
+        <FaGithub className="text-4xl text-gray-800 dark:text-white" />
       </motion.a>
       <motion.a
         href="https://www.instagram.com/saurabh7xd/"

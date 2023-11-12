@@ -19,11 +19,13 @@ const Hero = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
+  const downLoadCV = () => {
+    const cvLink =
+      "https://drive.google.com/file/d/1YTJQRTgy7BpQQW5QkzavAmbB_k1FhYVU/view?usp=drive_link";
+    window.open(cvLink, "_blank");
+  };
   return (
-    <main
-      className="relative my-10 overflow-hidden pt-24 "
-      id="home"
-    >
+    <main className="relative my-10 overflow-hidden pt-24 " id="home">
       <motion.div
         ref={ref}
         className="relative z-20 flex items-center overflow-hidden "
@@ -46,6 +48,7 @@ const Hero = () => {
               <Button
                 btnText="Download CV"
                 btnIcon={<HiOutlineDownload className="text-2xl" />}
+                handleOnClick={downLoadCV}
               />
             </motion.div>
           </motion.div>
