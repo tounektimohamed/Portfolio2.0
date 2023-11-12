@@ -1,5 +1,4 @@
 import {
-  AboutAnimation,
   DockerLogo,
   ExpressJSLogo,
   FastAPILogo,
@@ -12,7 +11,6 @@ import {
   TailwindCSSLogo,
 } from "../Assets/AssetsList";
 import GitHubCalender from "../Components/GitHubCalender";
-import LottieAnimationCard from "../Components/LottieAnimationCard";
 import SkillsCard from "../Components/SkillsCard";
 import Title from "../Components/Title";
 
