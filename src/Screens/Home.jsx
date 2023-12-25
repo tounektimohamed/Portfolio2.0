@@ -21,7 +21,7 @@ const Hero = () => {
 
   const downLoadCV = () => {
     const cvLink =
-      "https://drive.google.com/file/d/1YTJQRTgy7BpQQW5QkzavAmbB_k1FhYVU/view?usp=drive_link";
+      "https://drive.google.com/file/d/12zMDYQjmBzjXLZjZW5BTErKE_UYgSVex/view?usp=sharing";
     window.open(cvLink, "_blank");
   };
   return (
