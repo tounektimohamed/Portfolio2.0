@@ -1,4 +1,4 @@
-import { FaBriefcase, FaGraduationCap, FaBuilding } from 'react-icons/fa'; 
+import { FaBriefcase, FaGraduationCap, FaBuilding } from 'react-icons/fa';
 
 const timelineItems = [
   {
@@ -7,7 +7,7 @@ const timelineItems = [
     icon: <FaBriefcase />,
     title: 'Integrated Active Monitoring',
     subTitle: 'Software Developer',
-    description: 'React JS, Ant Design, Fastify, Python, PSQL, MongoDB, Docker, Redis',
+    description: 'React JS, Redux Toolkit, Ant Design, FastAPI, Python, PSQL, MongoDB, Docker',
   },
   {
     date: <span className='text-lightText md:text-darkBg dark:text-lightText'>2023 JAN - 2023 MAR</span>,
@@ -20,7 +20,7 @@ const timelineItems = [
   {
     date: <span className='text-lightText md:text-darkBg dark:text-lightText'> 2022 - 2024 </span>,
     position: 'right',
-    icon: <FaGraduationCap />, 
+    icon: <FaGraduationCap />,
     title: 'Savitribai Phule Pune University',
     subTitle: 'Master Of Science, Computer Science MSc(CS)',
     description: 'Post Graduation',
@@ -28,7 +28,7 @@ const timelineItems = [
   {
     date: <span className='text-lightText md:text-darkBg dark:text-lightText'> 2019 - 2022 </span>,
     position: 'left',
-    icon: <FaBuilding />, 
+    icon: <FaBuilding />,
     title: 'Savitribai Phule Pune University',
     subTitle: 'Bachelor Of Vocational, Software Development',
     description: 'Total CGPA: 9.56 (81.91%)',

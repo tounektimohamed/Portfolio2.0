@@ -34,6 +34,7 @@ const Project = () => {
     },
   };
 
+
   return (
     <motion.div
       className="flex justify-center items-center flex-col p-2 mt-8 mx-auto"
@@ -49,9 +50,9 @@ const Project = () => {
       >
         <Title text="Projects" />
         <div className="flex justify-center items-center gap-10 text-2xl mt-5">
-          {Labels.map((item) => (
+          {Labels.map((item, index) => (
             <motion.h2
-              key={item}
+              key={index}
               onClick={() => handleFilterProjects(item)}
               className={
                 item === activeLabel
@@ -73,11 +74,12 @@ const Project = () => {
         }
         mx-auto gap-4 mt-10`}
       >
-        {projects.map((project, index) => (
+        {projects?.map((project, index) => (
           <Cards
             imgSrc={project.image}
             title={project.name}
-            key={index}
+            projectKey={project.key}
+            key={project.key}
             index={index}
             demoLink={project.demoLink}
             clientDemoLink={project.clientDemoLink}

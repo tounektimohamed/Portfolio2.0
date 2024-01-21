@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import Modal from "./Modal";
 
-const Cards = ({ title, imgSrc, index, clientDemoLink }) => {
+const Cards = ({ title, imgSrc, index, clientDemoLink, projectKey }) => {
   const [showModal, setShowModal] = useState(false);
 
   const ref = useRef(null);
@@ -10,13 +10,12 @@ const Cards = ({ title, imgSrc, index, clientDemoLink }) => {
 
   const handleShowProject = () => {
     if (clientDemoLink) {
-      window.open(clientDemoLink, "_blank", "noopener noreferrer")
+      window.open(clientDemoLink, "_blank", "noopener noreferrer");
+    } else {
+      setShowModal(true);
+      document.body.classList.add("overflow-hidden");
     }
-    else {
-      setShowModal(true)
-      document.body.classList.add('overflow-hidden')
-    }
-  }
+  };
 
   const variants = {
     hidden: { opacity: 0, y: 20 },
@@ -41,7 +40,6 @@ const Cards = ({ title, imgSrc, index, clientDemoLink }) => {
       },
     },
   };
-
 
   return (
     <>
@@ -68,10 +66,7 @@ const Cards = ({ title, imgSrc, index, clientDemoLink }) => {
         </h2>
       </motion.div>
       {showModal && (
-        <Modal
-          onClose={() => setShowModal(false)}
-          id={index}
-        />
+        <Modal onClose={() => setShowModal(false)} projectKey={projectKey} />
       )}
     </>
   );

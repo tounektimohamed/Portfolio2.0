@@ -16,10 +16,14 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       updateLoad(false);
-    }, 1200);
+    }, 1300);
 
     return () => clearTimeout(timer);
   }, []);
+  console.log(
+    '%c Oh, you found the console! Feeling adventurous, huh? 🕵️‍♂️',
+    'background: #ff5252; color: #fff; padding: 10px; font-size: 16px; font-weight: bold;'
+  );
 
   return (
     <>
