@@ -3,6 +3,8 @@ import { motion, useInView } from "framer-motion";
 import Cards from "../Components/Cards";
 import { ProjectList } from "../Utils/ProjectDetails";
 import Title from "../Components/Title";
+import LottieAnimationCard from "../Components/LottieAnimationCard";
+import { ProjectAnimation } from "../Assets/AssetsList";
 
 const Project = () => {
   const Labels = ["All", "Client", "Personal"];
@@ -34,7 +36,6 @@ const Project = () => {
     },
   };
 
-
   return (
     <motion.div
       className="flex justify-center items-center flex-col p-2 mt-8 mx-auto"
@@ -49,42 +50,30 @@ const Project = () => {
         ref={ref}
       >
         <Title text="Projects" />
-        <div className="flex justify-center items-center gap-10 text-2xl mt-5">
-          {Labels.map((item, index) => (
-            <motion.h2
-              key={index}
-              onClick={() => handleFilterProjects(item)}
-              className={
-                item === activeLabel
-                  ? "text-fadeMainTheme"
-                  : "dark:text-lightText text-darkBg hover:text-fadeMainTheme"
-              }
-              style={{ cursor: "pointer" }}
-            >
-              {item}
-            </motion.h2>
+        <div className="flex justify-center items-center gap-10 text-2xl mt-5"></div>
+      </motion.div>
+      <div className="flex justify-between items-center flex-col lg:flex-row">
+        <LottieAnimationCard AnimationSrc={ProjectAnimation} />
+        <div
+          className={`${
+            projects.length > 2
+              ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"
+              : "flex justify-center items-center"
+          }
+            mx-auto gap-4 mt-10`}
+        >
+          {projects?.map((project, index) => (
+            <Cards
+              imgSrc={project.image}
+              title={project.name}
+              projectKey={project.key}
+              key={project.key}
+              index={index}
+              demoLink={project.demoLink}
+              clientDemoLink={project.clientDemoLink}
+            />
           ))}
         </div>
-      </motion.div>
-      <div
-        className={`${
-          projects.length > 2
-            ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"
-            : "flex justify-center items-center"
-        }
-        mx-auto gap-4 mt-10`}
-      >
-        {projects?.map((project, index) => (
-          <Cards
-            imgSrc={project.image}
-            title={project.name}
-            projectKey={project.key}
-            key={project.key}
-            index={index}
-            demoLink={project.demoLink}
-            clientDemoLink={project.clientDemoLink}
-          />
-        ))}
       </div>
     </motion.div>
   );

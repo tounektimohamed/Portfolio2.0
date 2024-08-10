@@ -1,6 +1,5 @@
 // Projects
 import ecommlogo from "../Assets/Project-Images/Ecommerce campaign-amico.svg";
-import drivingSchoolLogo from "../Assets/Project-Images/driving school-bro.svg";
 import portfolioLogo from "../Assets/Project-Images/Personal site-amico.svg";
 import snapiaLogo from "../Assets/Project-Images/Building hashtag-amico.svg";
 import weatherAppLogo from "../Assets/Project-Images/Weather-amico.svg";
@@ -11,8 +10,8 @@ import loader from "../Assets/loader.svg"
 import aboutAnimation from "./Animations/AboutAnimation.json";
 import contactAnimation from "./Animations/ContactAnimation.json";
 import heroAnimation from "./Animations/HeroAnimation.json";
-import projectAnimation from "./Animations/ProjectAnimation.json";
 import skillsAnimation from "./Animations/SkillsAnimation.json";
+import project from "./Animations/Project.json";
 import { Link } from "react-scroll";
 
 
@@ -20,7 +19,6 @@ import { Link } from "react-scroll";
 
 import JavaScript from '../Assets/Skills/JavaScript.svg'
 import ReactJS from '../Assets/Skills/ReactJS.svg'
-import Redis from '../Assets/Skills/Redis.svg'
 import TailwindCSS from '../Assets/Skills/TailwindCSS1.svg'
 import PostgreSQL from '../Assets/Skills/PostgreSQL.svg'
 import NodeJS from '../Assets/Skills/NodeJS.svg'
@@ -46,7 +44,6 @@ export const MainLogo =
 // All  Projects Images
 
 export const ECmomLogo = ecommlogo;
-export const DrivingSchoolLogo = drivingSchoolLogo;
 export const PortfolioLogo = portfolioLogo;
 export const SnapiaLogo = snapiaLogo;
 export const WeatherAppLogo = weatherAppLogo;
@@ -58,13 +55,12 @@ export const Loader = loader;
 export const AboutAnimation = aboutAnimation;
 export const ContactAnimation = contactAnimation;
 export const HeroAnimation = heroAnimation;
-export const ProjectAnimation = projectAnimation;
+export const ProjectAnimation = project;
 export const SkillsAnimation = skillsAnimation;
 
 // All Skills
 export const JavaScriptLogo = JavaScript
 export const ReactJSLogo = ReactJS
-export const RedisLogo = Redis
 export const TailwindCSSLogo = TailwindCSS
 export const PostgreSQLLogo = PostgreSQL
 export const NodeJSLogo = NodeJS

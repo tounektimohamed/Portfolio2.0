@@ -1,5 +1,4 @@
 import {
-  DrivingSchoolLogo,
   ECmomLogo,
   IMDBLogo,
   PortfolioLogo,
@@ -8,12 +7,12 @@ import {
 } from "../Assets/AssetsList";
 
 export const ProjectList = [
-  {
-    key: 1,
-    name: "Om Sai Motor Driving School",
-    image: DrivingSchoolLogo,
-    clientDemoLink: "https://omsaimotordrivingschool.in/",
-  },
+  // {
+  //   key: 1,
+  //   name: "Om Sai Motor Driving School",
+  //   image: DrivingSchoolLogo,
+  //   clientDemoLink: "https://omsaimotordrivingschool.in/",
+  // },
   {
     key: 2,
     name: "ShopIt(E-commerce)",
