@@ -1,11 +1,11 @@
+import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { MainLogo } from "../Assets/AssetsList";
-import NavItems from "../Utils/NavItems";
+import NavItems from "../Constants/NavItems";
 import { Link as ScrollLink } from "react-scroll";
 import scrollToTopUtil from "../Utils/ScrollToTop";
 
-import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 const SocialIcons = () => {
   const ref = useRef();
   const inView = useInView(ref, { once: true });
@@ -29,6 +29,7 @@ const SocialIcons = () => {
       >
         <FaLinkedin className="text-4xl text-blue-600" />
       </motion.a>
+
       <motion.a
         href="https://github.com/Saurabh-8585"
         target="_blank"
@@ -36,13 +37,7 @@ const SocialIcons = () => {
       >
         <FaGithub className="text-4xl text-gray-800 dark:text-white" />
       </motion.a>
-      <motion.a
-        href="https://www.instagram.com/saurabh7xd/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaInstagram className="text-4xl text-pink-500" />
-      </motion.a>
+
       <motion.a
         href="https://twitter.com/Saurabhkhatmode"
         target="_blank"

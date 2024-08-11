@@ -5,7 +5,7 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
 import Switcher from "../Components/Switcher";
 import { MainLogo } from "../Assets/AssetsList";
-import NavItems from "../Utils/NavItems";
+import NavItems from "../Constants/NavItems";
 import ScrollProgress from "../Components/ScrollProgress";
 
 const Navbar = () => {
@@ -27,12 +27,12 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    Events.scrollEvent.register('begin', function (to, element) {
+    Events.scrollEvent.register("begin", function (to, element) {
       setIsMenuOpen(false);
     });
 
     return () => {
-      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove("begin");
     };
   }, []);
 

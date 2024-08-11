@@ -1,8 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import Modal from "./Modal";
+import Modal from "../Modal";
 
-const Cards = ({ title, imgSrc, index, clientDemoLink, projectKey }) => {
+const ProjectCard = ({ title, imgSrc, index, clientDemoLink, projectKey }) => {
   const [showModal, setShowModal] = useState(false);
 
   const ref = useRef(null);
@@ -72,4 +72,4 @@ const Cards = ({ title, imgSrc, index, clientDemoLink, projectKey }) => {
   );
 };
 
-export default Cards;
+export default ProjectCard;

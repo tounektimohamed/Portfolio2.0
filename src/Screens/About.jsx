@@ -1,5 +1,5 @@
 import { AboutAnimation } from "../Assets/AssetsList";
-import LottieAnimationCard from "../Components/LottieAnimationCard";
+import LottieAnimationCard from "../Components/Cards/LottieAnimationCard";
 import Timeline from "../Components/TimeLine";
 import Title from "../Components/Title";
 import { motion, useInView } from "framer-motion";

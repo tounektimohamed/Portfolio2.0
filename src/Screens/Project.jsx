@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import Cards from "../Components/Cards";
-import { ProjectList } from "../Utils/ProjectDetails";
+import ProjectCard from "../Components/Cards/ProjectCard";
+import { ProjectList } from "../Constants/ProjectDetails";
 import Title from "../Components/Title";
-import LottieAnimationCard from "../Components/LottieAnimationCard";
+import LottieAnimationCard from "../Components/Cards/LottieAnimationCard";
 import { ProjectAnimation } from "../Assets/AssetsList";
 
 const Project = () => {
@@ -63,7 +63,7 @@ const Project = () => {
             mx-auto gap-4 mt-10`}
         >
           {projects?.map((project, index) => (
-            <Cards
+            <ProjectCard
               imgSrc={project.image}
               title={project.name}
               projectKey={project.key}

@@ -1,6 +1,6 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import timelineItems from "../Utils/TimeLineData"
+import timelineItems from "../Constants/TimeLineData";
 
 const TimeLine = () => {
   return (

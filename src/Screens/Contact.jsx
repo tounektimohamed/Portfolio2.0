@@ -1,6 +1,6 @@
 import { ContactAnimation } from "../Assets/AssetsList";
 import ContactForm from "../Components/ContactForm";
-import LottieAnimationCard from "../Components/LottieAnimationCard";
+import LottieAnimationCard from "../Components/Cards/LottieAnimationCard";
 import Title from "../Components/Title";
 ;
 

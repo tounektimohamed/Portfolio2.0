@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import Button from "../Components/Button";
-import LottieAnimationCard from "../Components/LottieAnimationCard";
+import LottieAnimationCard from "../Components/Cards/LottieAnimationCard";
 import { HeroAnimation } from "../Assets/AssetsList";
 import { HiOutlineDownload } from "react-icons/hi";
 import { useRef } from "react";

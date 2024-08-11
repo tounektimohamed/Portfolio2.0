@@ -11,7 +11,7 @@ import {
   TailwindCSSLogo,
 } from "../Assets/AssetsList";
 import GitHubCalender from "../Components/GitHubCalender";
-import SkillsCard from "../Components/SkillsCard";
+import SkillsCard from "../Components/Cards/SkillsCard";
 import Title from "../Components/Title";
 
 const Skills = () => {

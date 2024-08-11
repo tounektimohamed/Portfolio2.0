@@ -1,5 +1,5 @@
-import {  useState } from "react";
-import { ProjectList } from "../Utils/ProjectDetails";
+import { useState } from "react";
+import { ProjectList } from "../Constants/ProjectDetails";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "../Components/Button";
 import { AiOutlineGithub, AiOutlineCloseCircle } from "react-icons/ai";
@@ -7,7 +7,6 @@ import { TbWorldWww } from "react-icons/tb";
 
 const Modal = ({ onClose, projectKey }) => {
   const [isOpen, setIsOpen] = useState(true);
-
 
   const [singleProject] = ProjectList.filter((data) => data.key === projectKey);
   const { codeLink, demoLink, info, name, skills, youtube_url } = singleProject;
