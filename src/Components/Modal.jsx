@@ -7,7 +7,6 @@ import { TbWorldWww } from "react-icons/tb";
 
 const Modal = ({ onClose, projectKey }) => {
   const [isOpen, setIsOpen] = useState(true);
-
   const [singleProject] = ProjectList.filter((data) => data.key === projectKey);
   const { codeLink, demoLink, info, name, skills, youtube_url } = singleProject;
 
@@ -16,78 +15,81 @@ const Modal = ({ onClose, projectKey }) => {
     onClose();
   };
 
-  const modalVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 },
-  };
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          className="fixed inset-0 flex items-center justify-center z-50 p-5 "
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-          variants={modalVariants}
+        <div
+          onClick={closeModal}
+          className="fixed inset-0 z-50 flex cursor-pointer items-center justify-center overflow-y-scroll bg-slate-900/20 p-8 backdrop-blur"
         >
-          <div className="bg-gray-900 bg-opacity-70 w-full h-full absolute"></div>
           <motion.div
-            className="px-4 py-6 md:w-1/2 lg:w-1/3 xl:w-1/5 min-w-1/2 mx-auto relative z-10 bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-y-scroll max-h-[500px] border border-gray-60"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
+            initial={{ scale: 0, rotate: "180deg" }}
+            animate={{
+              scale: 1,
+              rotate: "0deg",
+              transition: {
+                type: "spring",
+                bounce: 0.25,
+              },
+            }}
+            exit={{ scale: 0, rotate: "180deg" }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-4xl max-h-[70vh] cursor-default overflow-hidden rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 p-6 text-white shadow-2xl overflow-y-auto"
           >
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="modal-title text-2xl font-bold text-fadeMainTheme">
-                {name}
-              </h2>
-            </div>
-            <div className="modal-body flex flex-col items-center">
-              <p className="modal-info text-xl text-center dark:text-lightText mt-4">
-                {info}
-              </p>
-              <div className="modal-skills mt-4">
-                <h3 className="text-xl font-semibold text-fadeMainTheme text-center">
-                  Skills Used:
-                </h3>
-                <ul className="list-disc list-inside text-lg text-center dark:text-lightText">
-                  {skills?.map((skill, index) => (
-                    <li key={index}>{skill}</li>
-                  ))}
-                </ul>
+            <div className="flex flex-col gap-3 lg:flex-row">
+              {/* Project Information */}
+              <div className="flex-1 lg:mr-4">
+                <h2 className="text-center text-3xl font-bold text-white">
+                  {name}
+                </h2>
+                <p className="mb-1 text-center text-white">{info}</p>
+                <div className="modal-skills mt-4">
+                  <h3 className="text-xl font-semibold text-center text-white">
+                    Skills Used:
+                  </h3>
+                  <ul className="list-disc list-inside text-lg text-center text-white">
+                    {skills?.map((skill, index) => (
+                      <li key={index}>{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-4 flex justify-around items-center">
+                  <Button
+                    btnText="View Code"
+                    btnIcon={<AiOutlineGithub />}
+                    handleOnClick={() =>
+                      window.open(codeLink, "_blank", "noopener noreferrer")
+                    }
+                  />
+                  <Button
+                    btnText="View Demo"
+                    btnIcon={<TbWorldWww />}
+                    handleOnClick={() =>
+                      window.open(demoLink, "_blank", "noopener noreferrer")
+                    }
+                  />
+                </div>
               </div>
+
+              {/* Demo Video */}
+              {youtube_url && (
+                <div className="flex-1 lg:ml-4 mt-4 lg:mt-0">
+                  <h3 className="text-xl font-bold text-center text-white">
+                    Demo Video:
+                  </h3>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src={youtube_url}
+                    title={name}
+                    className="w-full rounded-lg"
+                    allowFullScreen
+                  />
+                </div>
+              )}
             </div>
-            {youtube_url && (
-              <div className="mt-4">
-                <h3 className="text-xl font-bold text-fadeMainTheme">
-                  Demo Video:
-                </h3>
-                <iframe
-                  width="560"
-                  height="315"
-                  src={youtube_url}
-                  title={name}
-                  className="w-full rounded-lg"
-                  allowFullScreen
-                />
-              </div>
-            )}
-            <div className="mt-4 flex justify-around items-center">
-              <Button
-                btnText="View Code"
-                btnIcon={<AiOutlineGithub />}
-                handleOnClick={() =>
-                  window.open(codeLink, "_blank", "noopener noreferrer")
-                }
-              />
-              <Button
-                btnText="View Demo"
-                btnIcon={<TbWorldWww />}
-                handleOnClick={() =>
-                  window.open(demoLink, "_blank", "noopener noreferrer")
-                }
-              />
-            </div>
+
+            {/* Close Button */}
             <div className="modal-close absolute top-2 right-2">
               <motion.button
                 onClick={closeModal}
@@ -98,7 +100,7 @@ const Modal = ({ onClose, projectKey }) => {
               </motion.button>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );
